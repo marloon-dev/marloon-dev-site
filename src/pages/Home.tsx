@@ -8,12 +8,15 @@ import {
   Code2,
   Command,
   Github,
+  Instagram,
   Globe2,
   Layers3,
   Linkedin,
+  Mail,
   Menu,
   Monitor,
   MoveUpRight,
+  PenLine,
   Server,
   X,
 } from "lucide-react";
@@ -451,6 +454,9 @@ export default function Home() {
             <div className="contact-actions">
               <a className="button button-primary" href="https://www.linkedin.com/in/marloon-dev/" target="_blank" rel="noreferrer"><Linkedin size={16} /> LinkedIn <ArrowUpRight size={15} /></a>
               <a className="button button-outline" href="https://github.com/marloon-dev" target="_blank" rel="noreferrer"><Github size={16} /> GitHub <ArrowUpRight size={15} /></a>
+              <a className="button button-outline" href="https://www.instagram.com/marloon.dev/" target="_blank" rel="noreferrer"><Instagram size={16} /> Instagram <ArrowUpRight size={15} /></a>
+              <a className="button button-outline" href="https://dev.to/marloon-dev" target="_blank" rel="noreferrer"><PenLine size={16} /> Dev.to <ArrowUpRight size={15} /></a>
+              <a className="button button-outline" href="mailto:marloon.dev@gmail.com"><Mail size={16} /> marloon.dev@gmail.com</a>
             </div>
           </div>
           <div className="contact-side-note"><span>FEITO COM CURIOSIDADE</span><span>ABERTO A NOVOS PROJETOS</span></div>
