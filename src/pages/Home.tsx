@@ -12,11 +12,9 @@ import {
   Globe2,
   Layers3,
   Linkedin,
-  Mail,
   Menu,
   Monitor,
   MoveUpRight,
-  PenLine,
   Server,
   X,
 } from "lucide-react";
@@ -91,6 +89,34 @@ const projects = [
     action: "Ver no GitHub",
     href: "https://github.com/marloon-dev/Projeto-cordel",
   },
+];
+
+function DevToIcon({ size = 20 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="2" y="5" width="20" height="14" rx="2.5" />
+      <path d="M6 9.5v5h1.2a2 2 0 0 0 2-2v-1a2 2 0 0 0-2-2z" strokeWidth={1.6} />
+      <path d="M13.6 9.5h-2v5h2M11.6 12h1.6" strokeWidth={1.6} />
+      <path d="M15.6 9.5l1.2 5 1.2-5" strokeWidth={1.6} />
+    </svg>
+  );
+}
+
+function GmailIcon({ size = 20 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="2" y="5" width="20" height="14" rx="2.5" />
+      <path d="M6 16V9l6 4.5L18 9v7" />
+    </svg>
+  );
+}
+
+const socials = [
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/marloon-dev/", icon: Linkedin },
+  { label: "GitHub", href: "https://github.com/marloon-dev", icon: Github },
+  { label: "Instagram", href: "https://www.instagram.com/marloon.dev/", icon: Instagram },
+  { label: "Dev.to", href: "https://dev.to/marloon-dev", icon: DevToIcon },
+  { label: "Gmail: marloon.dev@gmail.com", href: "mailto:marloon.dev@gmail.com", icon: GmailIcon },
 ];
 
 function SiteHeader() {
@@ -452,11 +478,18 @@ export default function Home() {
             <h2 id="contact-title">Vamos fazer algo<br /><span>que faça diferença?</span></h2>
             <p>Estou aberto a oportunidades e projetos em parceria.</p>
             <div className="contact-actions">
-              <a className="button button-primary" href="https://www.linkedin.com/in/marloon-dev/" target="_blank" rel="noreferrer"><Linkedin size={16} /> LinkedIn <ArrowUpRight size={15} /></a>
-              <a className="button button-outline" href="https://github.com/marloon-dev" target="_blank" rel="noreferrer"><Github size={16} /> GitHub <ArrowUpRight size={15} /></a>
-              <a className="button button-outline" href="https://www.instagram.com/marloon.dev/" target="_blank" rel="noreferrer"><Instagram size={16} /> Instagram <ArrowUpRight size={15} /></a>
-              <a className="button button-outline" href="https://dev.to/marloon-dev" target="_blank" rel="noreferrer"><PenLine size={16} /> Dev.to <ArrowUpRight size={15} /></a>
-              <a className="button button-outline" href="mailto:marloon.dev@gmail.com"><Mail size={16} /> marloon.dev@gmail.com</a>
+              {socials.map(({ label, href, icon: Icon }) => (
+                <a
+                  className="social-link"
+                  href={href}
+                  key={label}
+                  aria-label={label}
+                  title={label}
+                  {...(href.startsWith("mailto:") ? {} : { target: "_blank", rel: "noreferrer" })}
+                >
+                  <Icon size={20} aria-hidden="true" />
+                </a>
+              ))}
             </div>
           </div>
           <div className="contact-side-note"><span>FEITO COM CURIOSIDADE</span><span>ABERTO A NOVOS PROJETOS</span></div>
