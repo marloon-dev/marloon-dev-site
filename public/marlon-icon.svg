@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="marlon.dev">
+  <rect width="512" height="512" rx="112" fill="#0b0e0c"/>
+  <rect x="24" y="24" width="464" height="464" rx="92" fill="none" stroke="#c6f36a" stroke-opacity=".42" stroke-width="4"/>
+  <path d="M112 347V165l144 142 144-142v182" fill="none" stroke="#c6f36a" stroke-linecap="round" stroke-linejoin="round" stroke-width="34"/>
+  <circle cx="400" cy="354" r="15" fill="#f08bb9"/>
+</svg>
